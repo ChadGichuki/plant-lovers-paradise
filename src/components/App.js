@@ -3,6 +3,7 @@ import {Routes, Route} from 'react-router-dom';
 import Home from './Home';
 import Navbar from './Navbar';
 import Plants from './Plants';
+import Buyers from './Buyers';
 
 function App() {
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 function Plant({id, name, species, best_climate, water_frequency, no_in_stock, image, handlePlantDetail}){
 
@@ -16,7 +16,7 @@ function Plant({id, name, species, best_climate, water_frequency, no_in_stock, i
             </div>
             <div className="col-md-8">
                 <div className="card-body">
-                    <p className="card-title">{name}</p>
+                    <p className="card-title"><strong>{name}</strong></p>
                     <p className="card-title">Species: {species}</p>
                     <p className="card-title">Best Climate: {best_climate}</p>
                     <p className="card-title">Watering Frequency: {water_frequency}</p>

@@ -21,15 +21,15 @@ function Buyers(){
                 <th>Feedback</th>
                 </tr>
             </thead>
-            <tbody class="table-group-divider">
+            <tbody className="table-group-divider">
                 {buyers.map(buyer => {
                     return(
                         <tr key={buyer.id}>
                             <td>{buyer.id}</td>
                             <td>{buyer.name}</td>
                             <td>{buyer.contact}</td>
-                            <td>{buyer.purchases.count} {buyer.purchases.count === 1 ? "Purchase" : "Purchasess"}</td>
-                            <td>{buyer.purchases[purchases.length-1].name}</td>
+                            <td>{buyer.purchases.length} {buyer.purchases.length === 1 ? "Purchase" : "Purchases"}</td>
+                            <td>{buyer.purchases[buyer.purchases.length-1].plant.name}</td>
                             <td>{buyer.feedback}</td>
                         </tr>
                     )
@@ -38,3 +38,5 @@ function Buyers(){
         </table>
     )
 }
+
+export default Buyers
