@@ -11,12 +11,18 @@ function Plants({handleSetPlants, plants}){
     },[plants])
 
     return(
-        <div className="survey">
-            <h1>This is a catalogue of the Plants Looking to find a home.</h1>
-            {plants.map(plant => {
-                return <Plant key={plant.id} id={plant.id} name={plant.name} species={plant.species} best_climate={plant.best_climate} water_frequency={plant.water_frequency} no_in_stock={plant.no_in_stock} image={plant.image}/>
-            })}
+        <div className="flex">
+            <div className="survey">
+                <h1>This is a catalogue of the Plants Looking to find a home.</h1>
+                {plants.map(plant => {
+                    return <Plant key={plant.id} id={plant.id} name={plant.name} species={plant.species} best_climate={plant.best_climate} water_frequency={plant.water_frequency} no_in_stock={plant.no_in_stock} image={plant.image}/>
+                })}
+            </div>
+            <div className="details">
+                <PlantDetail details={plantDetail}/>
+            </div>
         </div>
+
     )
 }
 

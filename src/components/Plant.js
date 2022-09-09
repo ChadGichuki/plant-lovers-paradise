@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Plant({id, name, species, best_climate, water_frequency, no_in_stock, image}){
+
+    cont [plantDetail, setPlantDetail] = useState({})
+
+    function handleViewDetailsClick(e){
+        fetch(`http://localhost:9292/plants/${id}`)
+        .then(res => res.json())
+        .then(data => setPlantDetail(data))
+    }
+
     return(
     <div className="card" style={{"width": "35rem"}}>
         <div className="row g-0">
@@ -14,7 +23,7 @@ function Plant({id, name, species, best_climate, water_frequency, no_in_stock, i
                     <p className="card-title">Best Climate: {best_climate}</p>
                     <p className="card-title">Watering Frequency: {water_frequency}</p>
                     <p className="card-title">Stock: {no_in_stock}</p>
-                    {/* <button className="btn btn-primary" onClick={handleOption1Click}>Vote</button> */}
+                    <button className="btn btn-primary" onClick={handleViewDetailsClick}>View Purchases</button>
                 </div>
 
             </div>
