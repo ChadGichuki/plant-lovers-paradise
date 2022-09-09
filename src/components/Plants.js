@@ -1,18 +1,44 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Plant from "./Plant";
 import PlantDetail from "./PlantDetail";
 
 function Plants({handleSetPlants, plants}){
 
     // State for detailed plant displayed lives here
-    cont [plantDetail, setPlantDetail] = useState({})
+    const [plantDetail, setPlantDetail] = useState(
+        {    
+        "id": 17,
+        "name": "Monstera",
+        "species": "Monstera adansonii",
+        "best_climate": "Cool and wet climate",
+        "water_frequency": "Once a week",
+        "no_in_stock": 5,
+        "image": "https://cdn.standardmedia.co.ke/images/monday/mrgzearkbazgdw4w621cc47da68d7.jpg",
+        "created_at": "2022-09-08T20:37:28.961Z",
+        "updated_at": "2022-09-08T20:37:28.961Z",
+        "purchases": [
+            {
+                "id": 39,
+                "plant_id": 17,
+                "buyer_id": 36,
+                "cost": 2380,
+                "buyer": {
+                    "id": 36,
+                    "name": "Jerold Hamill",
+                    "contact": 2902761311,
+                    "feedback": "Et aperiam laboriosam qui."
+                }
+            }
+        ]
+    }
+    )
 
     // On loading of Plants component, fetch plant data
     useEffect(() => {
         fetch("http://localhost:9292/plants")
         .then(res => res.json())
         .then(data => handleSetPlants(data))
-    },[plants])
+    },[])
 
     return(
         <div className="flex">

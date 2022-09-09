@@ -13,7 +13,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/plants" element={<Plants handleSetPlants={(plants) => setPlants(plants)} plants={plants}/>}/>
+        <Route path="/plants" element={<Plants handleSetPlants={(plants) => {setPlants(plants)}} plants={plants}/>}/>
         {/* <Route path="/buyers" element={<Results/>}/> */}
       </Routes>
     </div>
