@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 
-function Plant({id, name, species, best_climate, water_frequency, no_in_stock, image}){
-
-    cont [plantDetail, setPlantDetail] = useState({})
+function Plant({id, name, species, best_climate, water_frequency, no_in_stock, image, handlePlantDetail}){
 
     function handleViewDetailsClick(e){
         fetch(`http://localhost:9292/plants/${id}`)
         .then(res => res.json())
-        .then(data => setPlantDetail(data))
+        .then(data => handlePlantDetail(data))
     }
 
     return(
