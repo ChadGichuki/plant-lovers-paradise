@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/plants" element={<Plants handleSetPlants={(plants) => {setPlants(plants)}} plants={plants}/>}/>
-        {/* <Route path="/buyers" element={<Results/>}/> */}
+        <Route path="/buyers" element={<Buyers/>}/>
       </Routes>
     </div>
   );
