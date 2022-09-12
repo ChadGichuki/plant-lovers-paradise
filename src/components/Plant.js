@@ -7,13 +7,13 @@ function Plant({id, name, species, best_climate, water_frequency, no_in_stock, i
     })
 
     function handleViewDetailsClick(e){
-        fetch(`http://localhost:9292/plants/${id}`)
+        fetch(`https://serene-garden-41047.herokuapp.com/plants/${id}`)
         .then(res => res.json())
         .then(data => handlePlantDetail(data))
     }
 
     function handleDeleteClick(e){
-        fetch(`http://localhost:9292/plants/${id}`, {
+        fetch(`https://serene-garden-41047.herokuapp.com/plants/${id}`, {
             method: "DELETE",
             headers: {"Content-type": "Application/json"}
         })
@@ -33,7 +33,7 @@ function Plant({id, name, species, best_climate, water_frequency, no_in_stock, i
 
     function handleFormSubmit(e){
         e.preventDefault()
-        fetch(`http://localhost:9292/plants/${id}`, {
+        fetch(`https://serene-garden-41047.herokuapp.com/plants/${id}`, {
             method: "PATCH",
             headers: {"Content-Type": "Application/json"},
             body: JSON.stringify(formData)

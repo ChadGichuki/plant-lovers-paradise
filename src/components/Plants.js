@@ -35,7 +35,7 @@ function Plants({handleSetPlants, plants, handleDeletedPlants, onUpdatePlant}){
 
     // On loading of Plants component, fetch plant data
     useEffect(() => {
-        fetch("http://localhost:9292/plants")
+        fetch("https://serene-garden-41047.herokuapp.com/plants")
         .then(res => res.json())
         .then(data => {
             handleSetPlants(data)

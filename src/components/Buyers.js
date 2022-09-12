@@ -4,7 +4,7 @@ function Buyers({deletedPlants}){
     const [buyers, setBuyers] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:9292/buyers")
+        fetch("https://serene-garden-41047.herokuapp.com/buyers")
         .then(res => res.json())
         .then(data => setBuyers(data))
     }, [deletedPlants])

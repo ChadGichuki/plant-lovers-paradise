@@ -24,7 +24,7 @@ function NewPlant({onNewPlant}){
 
     function handleFormSubmit(e){
         e.preventDefault()
-        fetch("http://localhost:9292/plants", {
+        fetch("https://serene-garden-41047.herokuapp.com/plants", {
             method: "POST",
             headers: {"Content-Type": "Application/json"},
             body: JSON.stringify(formData)
