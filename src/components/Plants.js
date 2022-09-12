@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Plant from "./Plant";
 import PlantDetail from "./PlantDetail";
 
-function Plants({handleSetPlants, plants}){
+function Plants({handleSetPlants, plants, handleDeletedPlants}){
 
     // State for detailed plant displayed lives here
     const [plantDetail, setPlantDetail] = useState(
@@ -37,8 +37,17 @@ function Plants({handleSetPlants, plants}){
     useEffect(() => {
         fetch("http://localhost:9292/plants")
         .then(res => res.json())
-        .then(data => handleSetPlants(data))
+        .then(data => {
+            handleSetPlants(data)
+        })
     },[])
+
+    function onPlantDelete(data){
+        // let updatedPlants = plants.filter(plant => {
+        //     return plant.id !== data.id
+        // })
+        handleDeletedPlants(data)
+    }
 
     return(
         <>
@@ -46,7 +55,12 @@ function Plants({handleSetPlants, plants}){
             <div className="flex">
                 <div className="plants">
                     {plants.map(plant => {
-                        return <Plant key={plant.id} id={plant.id} name={plant.name} species={plant.species} best_climate={plant.best_climate} water_frequency={plant.water_frequency} no_in_stock={plant.no_in_stock} image={plant.image} handlePlantDetail={(details) => setPlantDetail(details)}/>
+                        return <Plant key={plant.id} id={plant.id} 
+                        name={plant.name} species={plant.species} 
+                        best_climate={plant.best_climate} water_frequency={plant.water_frequency} 
+                        no_in_stock={plant.no_in_stock} image={plant.image} 
+                        handlePlantDetail={(details) => setPlantDetail(details)}
+                        handlePlantDelete = {onPlantDelete}/>
                     })}
                 </div>
                 <div className="details">

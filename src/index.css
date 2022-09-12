@@ -121,3 +121,9 @@ padding: 150px 0;
 #first {
   text-decoration: underline;
 }
+
+.btn-primary {
+  margin-right: 4px;
+  margin-top: 4px;
+  background-color: rgb(66, 114, 68);
+}

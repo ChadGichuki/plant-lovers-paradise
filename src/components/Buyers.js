@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 
-function Buyers(){
+function Buyers({deletedPlants}){
     const [buyers, setBuyers] = useState([])
 
     useEffect(() => {
         fetch("http://localhost:9292/buyers")
         .then(res => res.json())
         .then(data => setBuyers(data))
-    }, [])
+    }, [deletedPlants])
 
     return(
         <table className="table table-striped-columns">
@@ -29,7 +29,7 @@ function Buyers(){
                             <td>{buyer.name}</td>
                             <td>{buyer.contact}</td>
                             <td>{buyer.purchases.length} {buyer.purchases.length === 1 ? "Purchase" : "Purchases"}</td>
-                            <td>{buyer.purchases[buyer.purchases.length-1].plant.name}</td>
+                            <td>{buyer.purchases.length === 0 ? "None" : buyer.purchases[buyer.purchases.length-1].plant.name}</td>
                             <td>{buyer.feedback}</td>
                         </tr>
                     )

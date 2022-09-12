@@ -1,11 +1,20 @@
 import React from "react";
 
-function Plant({id, name, species, best_climate, water_frequency, no_in_stock, image, handlePlantDetail}){
+function Plant({id, name, species, best_climate, water_frequency, no_in_stock, image, handlePlantDetail, handlePlantDelete}){
 
     function handleViewDetailsClick(e){
         fetch(`http://localhost:9292/plants/${id}`)
         .then(res => res.json())
         .then(data => handlePlantDetail(data))
+    }
+
+    function handleDeleteClick(e){
+        fetch(`http://localhost:9292/plants/${id}`, {
+            method: "DELETE",
+            headers: {"Content-type": "Application/json"}
+        })
+        .then(res => res.json())
+        .then(data => handlePlantDelete(data))
     }
 
     return(
@@ -22,6 +31,7 @@ function Plant({id, name, species, best_climate, water_frequency, no_in_stock, i
                     <p className="card-title">Watering Frequency: {water_frequency}</p>
                     <p className="card-title">Stock: {no_in_stock}</p>
                     <button className="btn btn-primary" onClick={handleViewDetailsClick}>View Purchases</button>
+                    <button className="btn btn-primary" onClick={handleDeleteClick}>Delete</button>
                 </div>
 
             </div>
