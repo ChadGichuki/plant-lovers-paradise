@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Plant from "./Plant";
 import PlantDetail from "./PlantDetail";
 
-function Plants({handleSetPlants, plants, handleDeletedPlants, onNewPlant}){
+function Plants({handleSetPlants, plants, handleDeletedPlants, onUpdatePlant}){
 
     // State for detailed plant displayed lives here
     const [plantDetail, setPlantDetail] = useState(
@@ -60,7 +60,7 @@ function Plants({handleSetPlants, plants, handleDeletedPlants, onNewPlant}){
                         best_climate={plant.best_climate} water_frequency={plant.water_frequency} 
                         no_in_stock={plant.no_in_stock} image={plant.image} 
                         handlePlantDetail={(details) => setPlantDetail(details)}
-                        handlePlantDelete = {onPlantDelete} onNewPlant={onNewPlant}/>
+                        handlePlantDelete = {onPlantDelete} onUpdatePlant={onUpdatePlant}/>
                     })}
                 </div>
                 <div className="details">

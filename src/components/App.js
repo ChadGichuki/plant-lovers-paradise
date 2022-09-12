@@ -29,12 +29,23 @@ function App() {
     setDeletedPlants(deletedPlants + 1)
   }
 
+  function handleUpdatePlant(data){
+    let new_stock = data.no_in_stock
+    let updatedPlants = plants.map(plant => {
+      if (plant.id === data.id) plant.no_in_stock = new_stock
+      return plant
+      })
+
+    setPlants(updatedPlants)
+  }
+
+
   return (
     <div className="App">
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/plants" element={<Plants handleSetPlants={handlePlants} handleDeletedPlants={handleDeletedPlants} plants={plants} onNewPlant={handleNewPlant}/>}/>
+        <Route path="/plants" element={<Plants handleSetPlants={handlePlants} handleDeletedPlants={handleDeletedPlants} plants={plants} onUpdatePlant={handleUpdatePlant}/>}/>
         <Route path="/buyers" element={<Buyers deletedPlants={deletedPlants}/>}/>
         <Route path="/nursery" element={<NewPlant onNewPlant={handleNewPlant}/>}/>
       </Routes>

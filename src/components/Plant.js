@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function Plant({id, name, species, best_climate, water_frequency, no_in_stock, image, handlePlantDetail, handlePlantDelete, onNewPlant}){
+function Plant({id, name, species, best_climate, water_frequency, no_in_stock, image, handlePlantDetail, handlePlantDelete, onUpdatePlant}){
 
     const [formData, setFormData] = useState({
         "no_in_stock": ""
@@ -40,7 +40,7 @@ function Plant({id, name, species, best_climate, water_frequency, no_in_stock, i
         })
         .then(res => res.json())
         .then(data => {
-            onNewPlant(data)
+            onUpdatePlant(data)
 
             // reset the form input fields
             setFormData({
@@ -64,7 +64,6 @@ function Plant({id, name, species, best_climate, water_frequency, no_in_stock, i
                     <p className="card-title">Stock: {no_in_stock}</p>
                     <button className="btn btn-primary" onClick={handleViewDetailsClick}>View Purchases</button>
                     <button className="btn btn-primary" onClick={handleDeleteClick}>Delete</button>
-                    <br/>
                     <form id="form" onSubmit={handleFormSubmit}>
                         <div className="mb-3">
                             <label htmlFor="name" className="form-label">Update Remaining Stock:</label><br/>
