@@ -68,8 +68,9 @@ function Plant({id, name, species, best_climate, water_frequency, no_in_stock, i
                         <div className="mb-3">
                             <label htmlFor="name" className="form-label">Update Remaining Stock:</label><br/>
                             <input type="text" id="name" className="form-control" name="no_in_stock" placeholder={no_in_stock} value={formData.no_in_stock} onChange={handleFormChange}/><br/>
+                            <input type="submit" value="Update" className="btn btn-primary"/>
                         </div>
-                        <input type="submit" value="Update" className="btn btn-primary"/>
+
                     </form>
                 </div>
 
