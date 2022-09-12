@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/plant-lovers-paradise/static/css/main.3d0fa78c.css",
+    "main.js": "/plant-lovers-paradise/static/js/main.ced7d6ae.js",
+    "static/js/787.67c988ba.chunk.js": "/plant-lovers-paradise/static/js/787.67c988ba.chunk.js",
+    "static/media/photo.jpg": "/plant-lovers-paradise/static/media/photo.9a916f0f1a718c70d715.jpg",
+    "index.html": "/plant-lovers-paradise/index.html",
+    "main.3d0fa78c.css.map": "/plant-lovers-paradise/static/css/main.3d0fa78c.css.map",
+    "main.ced7d6ae.js.map": "/plant-lovers-paradise/static/js/main.ced7d6ae.js.map",
+    "787.67c988ba.chunk.js.map": "/plant-lovers-paradise/static/js/787.67c988ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3d0fa78c.css",
+    "static/js/main.ced7d6ae.js"
+  ]
+}
