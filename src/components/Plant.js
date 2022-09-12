@@ -2,6 +2,10 @@ import React from "react";
 
 function Plant({id, name, species, best_climate, water_frequency, no_in_stock, image, handlePlantDetail, handlePlantDelete}){
 
+    const [formData, setFormData] = useState({
+        "no_in_stock": ""
+    })
+
     function handleViewDetailsClick(e){
         fetch(`http://localhost:9292/plants/${id}`)
         .then(res => res.json())
@@ -15,6 +19,24 @@ function Plant({id, name, species, best_climate, water_frequency, no_in_stock, i
         })
         .then(res => res.json())
         .then(data => handlePlantDelete(data))
+    }
+
+    function handleFormSubmit(e){
+        e.preventDefault()
+        fetch(`http://localhost:9292/plants/${id}`, {
+            method: "PATCH",
+            headers: {"Content-Type": "Application/json"},
+            body: JSON.stringify(formData)
+        })
+        .then(res => res.json())
+        .then(data => {
+            onNewPlant(data)
+
+            // reset the form input fields
+            setFormData({
+                "no_in_stock": ""
+            })
+        }) 
     }
 
     return(
@@ -32,6 +54,14 @@ function Plant({id, name, species, best_climate, water_frequency, no_in_stock, i
                     <p className="card-title">Stock: {no_in_stock}</p>
                     <button className="btn btn-primary" onClick={handleViewDetailsClick}>View Purchases</button>
                     <button className="btn btn-primary" onClick={handleDeleteClick}>Delete</button>
+                    <br/>
+                    <form id="form" onSubmit={handleFormSubmit}>
+                        <div className="mb-3">
+                            <label htmlFor="name" className="form-label">Update Remaining Stock:</label><br/>
+                            <input type="text" id="name" className="form-control" name="no_in_stock" placeholder={no_in_stock} value={formData.no_in_stock} onChange={handleFormChange}/><br/>
+                        </div>
+                        <input type="submit" value="Update" className="btn btn-primary"/>
+                    </form>
                 </div>
 
             </div>
