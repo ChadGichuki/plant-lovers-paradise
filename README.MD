@@ -5,11 +5,11 @@ The project consists of 2 parts:
 - [The Front end](current repository) implemented in ReactJS.
 - [The backend](https://github.com/ChadGichuki/Plant-Lovers-Paradise-App.git) implemented in Ruby and hosted on heroku.
 
-Vew the web page, hosted on Github pages [here.](https://chadgichuki.github.io/Friends-of-Frodo-Baggins/) 
+Vew the web page, hosted on Github pages [here.](https://chadgichuki.github.io/plant-lovers-paradise/) 
 
 When running from a local server you should expect to see a page like this:
 
-<img src="https://github.com/ChadGichuki/Friends-of-Frodo-Baggins/blob/main/media/landing-page.png" height="500">
+<img src="https://github.com/ChadGichuki/plant-lovers-paradise/blob/main/public/home.png" height="500">
 
 
 ## Getting Started
