@@ -1,6 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
 
-function Plant({id, name, species, best_climate, water_frequency, no_in_stock, image, handlePlantDetail, handlePlantDelete}){
+function Plant({id, name, species, best_climate, water_frequency, no_in_stock, image, handlePlantDetail, handlePlantDelete, onNewPlant}){
 
     const [formData, setFormData] = useState({
         "no_in_stock": ""
@@ -19,6 +19,16 @@ function Plant({id, name, species, best_climate, water_frequency, no_in_stock, i
         })
         .then(res => res.json())
         .then(data => handlePlantDelete(data))
+    }
+
+    function handleFormChange(event){
+        const name = event.target.name;
+        let value = event.target.value;
+
+        setFormData({
+            ...formData,
+            [name]: value,
+          });
     }
 
     function handleFormSubmit(e){

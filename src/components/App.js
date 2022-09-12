@@ -34,7 +34,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/plants" element={<Plants handleSetPlants={handlePlants} handleDeletedPlants={handleDeletedPlants} plants={plants}/>}/>
+        <Route path="/plants" element={<Plants handleSetPlants={handlePlants} handleDeletedPlants={handleDeletedPlants} plants={plants} onNewPlant={handleNewPlant}/>}/>
         <Route path="/buyers" element={<Buyers deletedPlants={deletedPlants}/>}/>
         <Route path="/nursery" element={<NewPlant onNewPlant={handleNewPlant}/>}/>
       </Routes>
