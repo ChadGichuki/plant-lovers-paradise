@@ -2,10 +2,11 @@
 his is a web application for use by a gardening store to keep track of plants already on sale and those maturing from the nursery. The app can also be used to keep track of their client list. 
 
 The project consists of 2 parts:
-- [The Front end](current repository) implemented in ReactJS.
+- The Front end(current repository) implemented in ReactJS.
 - [The backend](https://github.com/ChadGichuki/Plant-Lovers-Paradise-App.git) implemented in Ruby and hosted on heroku.
 
 Vew the web page, hosted on Github pages [here.](https://chadgichuki.github.io/plant-lovers-paradise/) 
+https://plant-lovers-paradise.web.app
 
 When running from a local server you should expect to see a page like this:
 
